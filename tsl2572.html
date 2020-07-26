@@ -1,0 +1,69 @@
+<script type="text/javascript">
+    RED.nodes.registerType('tsl2572', {
+        category: 'i2c sensors',
+        color: '#a6bbcf',
+        defaults: {
+            address: { value: '57', required: true, validate: RED.validators.number() },
+            integ: { value: '200', required: true },
+            gain: { value: '8', required: true },
+            debugMode: { value: false }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "chip.png",
+        label: function () {
+            return `TSL2572 @ 0x${Number(this.address).toString(16)}`;
+        },
+        labelStyle: function () {
+            return 'node_label_italic';
+        },
+        oneditsave: function () {
+            this.address = Number(this.address);
+            this.integ = Number(this.integ);
+            this.gain = Number(this.gain);
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="tsl2572">
+    <div class="form-row">
+        <span><i class="fa fa-microchip" aria-hidden="true"></i> TSL2572 Light-to-Digital Converter<br/> Sensor I2C Configuration</span>
+    </div>
+    
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-address"><i class="fa fa-address-card-o" aria-hidden="true"></i> Bus Address</label>
+         <select id="node-input-address">
+            <option value="57">0x39</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-integ"><i class="fa fa-thermometer-full" aria-hidden="true"></i> Integration Time</label>
+         <select id="node-input-integ">
+            <option value="50">50ms</option>
+            <option value="200">200ms</option>
+            <option value="600">600ms</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-gain"><i class="fa fa-address-card-o" aria-hidden="true"></i> Gain</label>
+         <select id="node-input-gain">
+            <option value="0.16">0.16</option>
+            <option value="1">1</option>
+            <option value="8">8</option>
+            <option value="16">16</option>
+            <option value="120">120</option>
+        </select>
+    </div>
+
+</script>
+
+<script type="text/html" data-help-name="tsl2572">
+    <p>TSL2572 node</p>
+</script>

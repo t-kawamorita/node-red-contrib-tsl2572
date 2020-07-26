@@ -1,0 +1,36 @@
+{
+  "name": "node-red-contrib-tsl2572",
+  "version": "1.0.0",
+  "description": "Node-RED for TSL2572 sensor",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/t-kawamorita/node-red-contrib-tsl2572.git"
+  },
+  "keywords": [
+    "node-red",
+    "rpi",
+    "raspberry",
+    "sensor",
+    "luminosity"
+  ],
+  "node-red": {
+    "nodes": {
+      "TSL2572": "tsl2572.js"
+    }
+  },
+  "author": "Takayoshi Kawamorita <takayoshi.kawamorita@gmail.com> (https://github.com/t-kawamorita)",
+  "bugs": {
+    "url": "https://github.com/t-kawamorita/node-red-contrib-tsl2572/issues"
+  },
+  "homepage": "https://github.com/t-kawamorita/node-red-contrib-tsl2572",
+  "license": "MIT",
+  "main": "tsl2572.js",
+  "bundleDependencies": false,
+  "deprecated": false,
+  "dependencies": {
+    "i2c-bus": "^5.1.0"
+  }
+}
